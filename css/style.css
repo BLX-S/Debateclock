@@ -103,12 +103,22 @@ body {
 }
 .countdown__fill_left {
   display: block;
-  width: 100%;
+  width: 50%;
   height: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
   background: rgb(41, 255, 34);
+  opacity: 1;
+}
+.countdown__fill_right {
+  display: block;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  background: rgb(255, 34, 34);
   opacity: 1;
 }
 .countdown__digit {
