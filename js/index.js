@@ -83,5 +83,5 @@ Timer.prototype.setDuration = function(duration) {
 	this.els.seconds.textContent = this.duration / 1000;
 }
 
-var timer = new Timer(10000, document.getElementById('countdown'));
+var timer = new Timer(600000, document.getElementById('countdown'));
 timer.start();
