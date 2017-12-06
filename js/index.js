@@ -17,7 +17,15 @@ function Timer(duration, element) {
 			self.element.classList.add(cl);
 		}
 	});
-	
+	/* Switch Code */
+	setInterval(function(){var elem = document.getElementById("ticker");
+	elem.style.background = "linear-gradient(90deg, rgb(255, 34, 34) 50%, rgb(102, 255, 0) 50%)";
+	},3000); 
+
+	function ColorChange() {
+	var elem = document.getElementById("ticker");
+	elem.style.background = "linear-gradient(90deg, rgb(255, 34, 34) 50%, rgb(102, 255, 0) 50%)";
+	}
 	var hammerHandler = new Hammer(this.element);
 	hammerHandler.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 	hammerHandler.on('panup pandown', function(ev) {
@@ -38,6 +46,8 @@ function Timer(duration, element) {
 		}
 	})
 }
+
+
 
 Timer.prototype.start = function() {
 	var self = this;
@@ -83,5 +93,5 @@ Timer.prototype.setDuration = function(duration) {
 	this.els.seconds.textContent = this.duration / 1000;
 }
 
-var timer = new Timer(600000, document.getElementById('countdown'));
+var timer = new Timer(60000, document.getElementById('countdown'));
 timer.start();
