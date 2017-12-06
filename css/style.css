@@ -103,15 +103,16 @@ body {
 }
 .countdown__fill_left {
   display: block;
-  width: 50%;
+  width: 100%;
   height: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
-  background: rgb(41, 255, 34);
+ /* background: rgb(41, 255, 34); */
+ background: linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%);
   opacity: 1;
 }
-.countdown__fill_right {
+/*.countdown__fill_right {
   display: block;
   width: 50%;
   height: 100%;
@@ -120,7 +121,7 @@ body {
   bottom: 0;
   background: rgb(255, 34, 34);
   opacity: 1;
-}
+} */
 .countdown__digit {
   width: 100%;
   color: rgb(41, 255, 34);
