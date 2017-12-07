@@ -17,10 +17,6 @@ function Timer(duration, element) {
 			self.element.classList.add(cl);
 		}
 	});
-	/* Switch Code */
-	setInterval(function(){var elem = document.getElementById("ticker");
-	elem.style.background = "linear-gradient(90deg, rgb(255, 34, 34) 50%, rgb(102, 255, 0) 50%)";
-	},3000); 
 
 	function ColorChange() {
 	var elem = document.getElementById("ticker");
@@ -37,7 +33,7 @@ function Timer(duration, element) {
 			}
 		}
 	});
-	
+
 	hammerHandler.on('tap', function() {
 		if (self.running) {
 			self.reset();
@@ -95,3 +91,17 @@ Timer.prototype.setDuration = function(duration) {
 
 var timer = new Timer(60000, document.getElementById('countdown'));
 timer.start();
+
+	/* Switch Code */
+
+		var switchTime = 4000;
+		var switched;
+		var switched = false; 
+		setInterval(bgSwitch1, switchTime);
+		function bgSwitch1(){var elem = document.getElementById("ticker");
+		elem.style.background = "linear-gradient(90deg, rgb(255, 34, 34) 50%, rgb(102, 255, 0) 50%)";
+		switched = true;}
+		
+		 function bgSwitch2(){var elem = document.getElementById("ticker");
+		elem.style.backgorund = "linear-gradient(90deg, rgb(102, 255, 0) 50%, rgb(255, 34, 34) 50% )";
+		switched = false;} 
