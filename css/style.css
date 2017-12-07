@@ -124,7 +124,7 @@ body {
 } */
 .countdown__digit {
   width: 100%;
-  color: rgb(41, 255, 34);
+  color: rgb(255, 255, 255);
   text-align: center;
   mix-blend-mode: difference;
   pointer-events: none;
