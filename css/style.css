@@ -109,7 +109,7 @@ body {
   left: 0;
   bottom: 0;
  /* background: rgb(41, 255, 34); */
- background: linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%);
+ background: linear-gradient(90deg, rgb(102, 255, 0) 50%, rgb(255, 34, 34) 50% );
   opacity: 1;
 }
 /*.countdown__fill_right {
