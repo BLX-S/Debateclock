@@ -93,15 +93,33 @@ var timer = new Timer(60000, document.getElementById('countdown'));
 timer.start();
 
 	/* Switch Code */
+	document.getElementById("switch").innerHTML = Boolean(switched);
+	function updateText(){
+	document.getElementById("switch").innerHTML = Boolean(switched);
+	}
 
 		var switchTime = 4000;
+		var reSwitch = 5000;
 		var switched;
-		var switched = false; 
-		setInterval(bgSwitch1, switchTime);
-		function bgSwitch1(){var elem = document.getElementById("ticker");
+		var switched=false; 
+		setTimeout(bgSwitch1, switchTime);
+		setTimeout(bgSwitch2, 6000);
+		function bgSwitch1(){
+		var elem = document.getElementById("ticker");
 		elem.style.background = "linear-gradient(90deg, rgb(255, 34, 34) 50%, rgb(102, 255, 0) 50%)";
-		switched = true;}
+		switched=true;
+		updateText();
+		}
 		
-		 function bgSwitch2(){var elem = document.getElementById("ticker");
-		elem.style.backgorund = "linear-gradient(90deg, rgb(102, 255, 0) 50%, rgb(255, 34, 34) 50% )";
-		switched = false;} 
+		function bgSwitch2(){
+		switched=false;
+		updateText();
+		/* document.getElementById("ticker").removeAttribute("background"); */
+		getElementById("ticker").removeAttribute("style");
+		/* elem.style.backgorund = "linear-gradient(90deg, rgb(102, 255, 0) 50%, rgb(255, 34, 34) 50%)"; */
+
+	} 
+	
+
+		
+		
