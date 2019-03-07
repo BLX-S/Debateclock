@@ -92,23 +92,43 @@ Timer.prototype.setDuration = function(duration) {
 var timer = new Timer(60000, document.getElementById('countdown'));
 timer.start();
 
-/* Switch Code */
-switched = false;
-document.getElementById("switch").innerHTML = Boolean(switched);
 
 
-function switch1() {
-    var elem = document.getElementById("ticker");
-    elem.style.background = "linear-gradient(90deg, rgb(255, 34, 34) 50%, rgb(102, 255, 0) 50%)";
-    switched=true;
-    document.getElementById("switch").innerHTML = Boolean(switched);
-}
 
-function switch2() {
-    var elem = document.getElementById("ticker");
-    elem.style.background = "linear-gradient(90deg, rgb(102, 255, 0) 50%, rgb(255, 34, 34) 50%)";
-    switched=false;
-    document.getElementById("switch").innerHTML = Boolean(switched);
-    // getElementById("ticker").removeAttribute("style");
-}
+	/* Switch Code */
+	document.getElementById("switch").innerHTML = Boolean(switched);
+	function updateText(){
+	document.getElementById("switch").innerHTML = Boolean(switched);
+	}
 
+/*	function switch1() {
+	    switched=false;
+	    updateText();
+
+    }*/
+		/*var switchTime = 4000;
+		var reSwitch = 5000;*/
+		var switched;
+		var switched=false; 
+		setTimeout(bgSwitch1, switchTime);
+		setTimeout(bgSwitch2, 6000);
+
+		function bgSwitch1(){
+		var elem = document.getElementById("ticker");
+		elem.style.background = "linear-gradient(90deg, rgb(255, 34, 34) 50%, rgb(102, 255, 0) 50%)";
+		switched=true;
+		updateText();
+		}
+		
+		function bgSwitch2(){
+		switched=false;
+		updateText();
+		 document.getElementById("ticker").removeAttribute("background");
+		getElementById("ticker").removeAttribute("style");
+		 elem.style.backgorund = "linear-gradient(90deg, rgb(102, 255, 0) 50%, rgb(255, 34, 34) 50%)";
+
+	} 
+
+
+		
+		
