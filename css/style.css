@@ -158,6 +158,17 @@ body {
   cursor: pointer;
 }
 
+.full-button-left {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    padding: 1em 0.5em 0.5em 2em;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+}
+
 h1 {
 color: white;
 
