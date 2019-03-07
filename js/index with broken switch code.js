@@ -44,6 +44,7 @@ function Timer(duration, element) {
 }
 
 
+
 Timer.prototype.start = function() {
 	var self = this;
 	var start = null;
@@ -60,9 +61,7 @@ Timer.prototype.start = function() {
 			
 			if (newSeconds != remainingSeconds) {
 				self.els.seconds.textContent = newSeconds;
-                escapedSeconds = newSeconds;
 				remainingSeconds = newSeconds;
-
 			}
 			
 			self.frameReq = window.requestAnimationFrame(draw);
@@ -72,7 +71,6 @@ Timer.prototype.start = function() {
 			self.els.ticker.style.height = '0%';
 			self.element.classList.add('countdown--ended');
 		}
-
 	};
 	
 	self.frameReq = window.requestAnimationFrame(draw);
@@ -89,55 +87,48 @@ Timer.prototype.reset = function() {
 Timer.prototype.setDuration = function(duration) {
 	this.duration = duration;
 	this.els.seconds.textContent = this.duration / 1000;
-	return duration
-
 }
 
-    var inputTime = prompt("Hoe Lang in minuten?", 1);
-    var time = inputTime * 60 * 1000;
-    var hoeveelSwitches = prompt("Hoeveel switches?", 1);
-
-
-var timer = new Timer(time, document.getElementById('countdown'));
-// timer.start();
-
-/* Switch Code */
-switched = false;
-document.getElementById("switch").innerHTML = Boolean(switched);
-
-
-function switch1() {
-    var elem = document.getElementById("ticker");
-    elem.style.background = "linear-gradient(90deg, rgb(255, 34, 34) 50%, rgb(102, 255, 0) 50%)";
-    switched=true;
-    document.getElementById("switch").innerHTML = Boolean(switched);
-}
-
-function switch2() {
-    var elem = document.getElementById("ticker");
-    elem.style.background = "linear-gradient(90deg, rgb(102, 255, 0) 50%, rgb(255, 34, 34) 50%)";
-    switched=false;
-    document.getElementById("switch").innerHTML = Boolean(switched);
-    // getElementById("ticker").removeAttribute("style");
-}
+var timer = new Timer(60000, document.getElementById('countdown'));
+timer.start();
 
 
 
-    hoeveelSwitches ++;
-    console.log(hoeveelSwitches);
-    console.log(time / hoeveelSwitches / 1000);
-    switchMoment = time - (time / hoeveelSwitches);
-    switchMoment = switchMoment / 1000;
+
+	/* Switch Code */
+	document.getElementById("switch").innerHTML = Boolean(switched);
+	function updateText(){
+	document.getElementById("switch").innerHTML = Boolean(switched);
+	}
+
+/*	function switch1() {
+	    switched=false;
+	    updateText();
+
+    }*/
+		/*var switchTime = 4000;
+		var reSwitch = 5000;*/
+		var switched;
+		var switched=false; 
+		setTimeout(bgSwitch1, switchTime);
+		setTimeout(bgSwitch2, 6000);
+
+		function bgSwitch1(){
+		var elem = document.getElementById("ticker");
+		elem.style.background = "linear-gradient(90deg, rgb(255, 34, 34) 50%, rgb(102, 255, 0) 50%)";
+		switched=true;
+		updateText();
+		}
+		
+		function bgSwitch2(){
+		switched=false;
+		updateText();
+		 document.getElementById("ticker").removeAttribute("background");
+		getElementById("ticker").removeAttribute("style");
+		 elem.style.backgorund = "linear-gradient(90deg, rgb(102, 255, 0) 50%, rgb(255, 34, 34) 50%)";
+
+	} 
 
 
-window.setInterval(function(){
- console.log("switch moment is ", switchMoment);
-    if (switchMoment == escapedSeconds && switched == false) {
-        console.log ("Switch moment arrived")
-        switch1();
-    }
-     else if (time == switchMoment && switched == true) {
-         switch2();
-     }
-    console.log(escapedSeconds);
-}, 900);
+		
+		

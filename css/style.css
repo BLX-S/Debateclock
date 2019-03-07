@@ -124,7 +124,8 @@ body {
 } */
 .countdown__digit {
   width: 100%;
-  color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255); 
+ /* background: linear-gradient(90deg, rgb(104, 255, 34) 50%, rgb(255, 0, 0) 50%); */
   text-align: center;
   mix-blend-mode: difference;
   pointer-events: none;
@@ -155,4 +156,20 @@ body {
   text-transform: uppercase;
   color: white;
   cursor: pointer;
+}
+
+.full-button-left {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    padding: 1em 0.5em 0.5em 2em;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+}
+
+h1 {
+color: white;
+
 }
